@@ -73,6 +73,7 @@
 
 <script>
   const lenguajes = document.querySelector('#lenguajes');
+  console.log(lenguajes)
     lenguajes.addEventListener('change', () => {
       let valorOption = lenguajes.value;
       console.log(valorOption);
@@ -83,7 +84,7 @@
       console.log("Valor:", optionSelect.value);
 
       /*Mostrando el resultado en el input*/
-      inputResult = document.querySelector('#result').value=(optionSelect.text +' - ' + optionSelect.value);
+    let  inputResult = document.querySelector('#result').value=(optionSelect.text +' - ' + optionSelect.value);
       
       /* Mostrando resultado en la capa capaResultado*/
       const capa = document.querySelector('#capaResultado');
