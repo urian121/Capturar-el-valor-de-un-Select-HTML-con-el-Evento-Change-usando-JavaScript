@@ -8,8 +8,19 @@
   <title>Capturar el valor de un Select HTML con JavaScript</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+      #capaResultado{
+        background: yellow;
+        padding: 5px 10px;
+        text-align: center;
+        color: #333;
+        font-weight: 800;
+      }
+      img{
+        width: 300px;
+      }
+    </style>
 </head>
-
 <body>
 
   <div class="container">
@@ -17,38 +28,38 @@
       <div class="col-md-12">
 
         <h1 class="mb-5" style="text-align:center; margin-top:50px; font-weight: 800;font-size: 50px;">
-          Capturar el VALOR de un SELECT HTML usando el evento Change de JavaScript 😲
+          🔥 Capturar el VALOR de un SELECT HTML usando el evento Change de JavaScript 😲
         </h1>
 
-
-
         <div class="row justify-content-md-center">
+          <div class="col-md-5">
+            <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="" srcset="">
+          </div>
+
           <div class="col-md-6">
-            <form name="miForm" id="miForm" action="#" method="POST">
+            <form name="miForm" action="#" method="POST">
               <p>
                 <strong>
-                  Cual Lenguaje de programación te gusta más:
+                  Cuál Lenguaje de Programación te gusta más:
                 </strong>
               </p>
               <div class="input-group mb-3">
                 <select name="lenguajes" id="lenguajes" class="custom-select">
-                  <option value="" disabled selected>Seleccione Uno …</option>
-                  <option value="1">PHP</option>
-                  <option value="2">PYTHON</option>
-                  <option value="3">JAVA</option>
-                  <option value="4">JAVASCRIPT</option>
+                  <option value="" selected>Seleccione Uno …</option>
+                  <option value="1">PYTHON</option>
+                  <option value="2">PHP</option>
+                  <option value="3">JAVASCRIPT</option>
+                  <option value="4">JAVA</option>
                   <option value="5">NODE.JS</option>
                   <option value="6">C++</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Resultado</label>
+                <label for="result">Resultado</label>
                 <input type="text" name="result" id="result" class="form-control">
               </div>
-              <div id="capaResultado" style="color:crimson; padding:0px 0px 10px 0px;"> </div>
-              <button type="submit" class="btn btn-success btn-block">Procesar</button>
+              <div id="capaResultado">  - - </div>
             </form>
-
 
           </div>
         </div>
@@ -60,8 +71,8 @@
   </div>
 
 
-  <script>
-    const lenguajes = document.querySelector('#lenguajes');
+<script>
+  const lenguajes = document.querySelector('#lenguajes');
     lenguajes.addEventListener('change', () => {
       let valorOption = lenguajes.value;
       console.log(valorOption);
@@ -71,11 +82,14 @@
       console.log("Opción:", optionSelect.text);
       console.log("Valor:", optionSelect.value);
 
+      /*Mostrando el resultado en el input*/
+      inputResult = document.querySelector('#result').value=(optionSelect.text +' - ' + optionSelect.value);
+      
+      /* Mostrando resultado en la capa capaResultado*/
       const capa = document.querySelector('#capaResultado');
       capa.textContent = `Mi lenguaje es: ${valorOption}`;
     });
-  </script>
+</script>
 
 </body>
-
 </html>
