@@ -54,6 +54,19 @@
                   <option value="6">C++</option>
                 </select>
               </div>
+    
+                <label> <strong> Otra forma</strong></label>
+                <select name="lenguajes2" id="lenguajes2" class="custom-select mb-3" onchange="mostrarLenguaje('variable_xyz', this.value)" >  
+                    <option value="" selected>Seleccione Uno …</option>                                                    
+                    <option value="" selected>Seleccione Uno …</option>
+                    <option value="1">PYTHON</option>
+                    <option value="2">PHP</option>
+                    <option value="3">JAVASCRIPT</option>
+                    <option value="4">JAVA</option>
+                    <option value="5">NODE.JS</option>
+                    <option value="6">C++</option>                  
+                </select>
+
               <div class="form-group">
                 <label for="result">Resultado</label>
                 <input type="text" name="result" id="result" class="form-control">
@@ -90,7 +103,19 @@
       const capa = document.querySelector('#capaResultado');
       capa.textContent = `Mi lenguaje es: ${valorOption}`;
     });
+
+
+/* 
+Otra forma de captura tanto el valor de un select html, como enviar y recibir variables
+desde el mismo select. Nota: la variable 'variable_xyz' aqui es opcional si deseas enviar alguna 
+variable o valor de acuerdo a tu necesita 
+*/
+function mostrarLenguaje(miVariable,filtro){  
+    console.log('El valor de mi variable ' + miVariable);
+    console.log('El valor de mi select ', filtro)
+}
 </script>
+
 
 </body>
 </html>
